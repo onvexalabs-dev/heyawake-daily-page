@@ -1,0 +1,52 @@
+name: Build and publish game website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.release.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/build_site.py
+      - run: python tools/validate_site.py
+      - id: release
+        name: Check publisher readiness
+        run: python -c "import json,os; c=json.load(open('site.config.json')); p=c['publisher']; ready=c.get('legal_ready') and all(p.get(k) for k in ['legal_name','address_lines','country','email']); open(os.environ['GITHUB_OUTPUT'],'a').write('ready='+str(bool(ready)).lower()+'\n')"
+      - if: steps.release.outputs.ready == 'true'
+        run: python tools/validate_site.py --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: website-preview
+          path: dist
+      - if: steps.release.outputs.ready == 'true'
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - if: steps.release.outputs.ready == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    if: needs.build.outputs.ready == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,17 @@
+{
+  "title": "Heyawake Daily",
+  "brand": "Onvexa Labs",
+  "base_url": "https://onvexalabs-dev.github.io/heyawake-daily-page/",
+  "play_store_url": null,
+  "publisher": {
+    "legal_name": null,
+    "address_lines": [],
+    "country": null,
+    "email": null,
+    "registration": null,
+    "vat_id": null
+  },
+  "legal_ready": false,
+  "app_version": "0.3.0",
+  "updated": "2026-10-16"
+}

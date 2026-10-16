@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png -text
+*.webp -text
+*.ttf -text
+*.jar -text
+brand/*-OFL.txt -whitespace
+src/assets/fonts/*-OFL.txt -whitespace
