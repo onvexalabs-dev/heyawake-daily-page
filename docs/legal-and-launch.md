@@ -1,7 +1,7 @@
 # Legal and launch facts
 
-The legal copy covers the current application and site, rather than unimplemented
-advertising or data collection. The app has local gameplay storage and locally
+The legal copy covers Android 0.5.0 with optional Google Mobile Ads and UMP,
+including SDK data processing after explicit use. The app has local gameplay storage and locally
 scheduled optional notifications. The website uses no analytics or marketing
 cookies; fonts and images are served locally. A chosen share destination or email
 provider is outside the app's control.
@@ -11,9 +11,10 @@ in site.config.json. The public deployment stays disabled until these are comple
 Add registration/representative/VAT details where applicable to the actual publisher.
 Do not claim the brand name is a registered legal entity without verification.
 
-Revisit privacy and store Data safety before AdMob/UMP, analytics or cloud sync are added.
-The supplied AdMob rewarded unit is planned to grant 250 points; this release does not
-yet load ads. No obsolete EU online-dispute-resolution platform link is included.
+Complete the Play Data safety declarations for the included Google SDKs.
+Optional ads grant 250 points only on the earned callback. Ages 13–15 receive no ads;
+16+ may opt in. Debug builds use test IDs; release live ads are disabled pending
+AdMob account message setup and device testing. All gameplay remains offline. No obsolete EU online-dispute-resolution platform link is included.
 
 ## Official references consulted
 - Google Play privacy policy requirements: https://support.google.com/googleplay/android-developer/answer/10144311
