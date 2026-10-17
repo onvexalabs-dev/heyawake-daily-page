@@ -4,14 +4,17 @@
   "base_url": "https://onvexalabs-dev.github.io/heyawake-daily-page/",
   "play_store_url": null,
   "publisher": {
-    "legal_name": null,
-    "address_lines": [],
-    "country": null,
-    "email": null,
+    "legal_name": "Manfred Uschan",
+    "address_lines": [
+      "Unterneuberg 136",
+      "8225 Pöllau"
+    ],
+    "country": "Austria",
+    "email": "onvexalabs@gmail.com",
     "registration": null,
     "vat_id": null
   },
-  "legal_ready": false,
+  "legal_ready": true,
   "app_version": "0.4.0",
   "updated": "2026-10-17"
 }
