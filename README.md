@@ -27,7 +27,7 @@ The browser demo is a real verified puzzle from the game's catalogue. Its state
 stays only in memory and is cleared on reload. No analytics, cookies or account.
 
 ## Legal facts
-Policies describe Android build 0.5.0 with optional Google Mobile Ads and UMP consent.
+Policies describe Android build 0.7.0 with optional Google Mobile Ads and UMP consent.
 All gameplay remains offline. Ages 13–15 receive no ads; ages 16+ may opt in.
 Debug uses test IDs. Release live ads remain gated pending dashboard setup and device testing.
 There is no cloud sync, separate analytics SDK or in-app purchase system.
